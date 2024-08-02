@@ -2,7 +2,8 @@
 	"songs": [
 		{
 			"difficulties": [
-                "",
+				"V1",
+                "V2",
 				"gay"
 			],
 			"char": "",

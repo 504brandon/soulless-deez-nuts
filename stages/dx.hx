@@ -32,7 +32,8 @@ function create() {
     camPicoNotes.bgColor = new FlxColor(0x00000000);
     FlxG.cameras.add(camPicoNotes, false);
 
-    camDXNotes.addShader(shader3 = new CustomShader(Paths.shader("dx"))); //ty yoshi
+    if (PlayState.get_difficulty() != "V1")
+        camDXNotes.addShader(shader3 = new CustomShader(Paths.shader("dx"))); //ty yoshi
     
     FlxG.scaleMode.width = 1280;
     FlxG.scaleMode.height = 960;
@@ -187,21 +188,24 @@ function update(elapsed:Float) {
 
     camDXNotes.zoom = PlayState.camGame.zoom - 0.3;
 
-    if (shader != null)
+    /*if (shader != null)
         shader.shaderData.iTime.value = [curDecBeat / 2];
 
     if (shader2 != null)
         shader2.shaderData.iTime.value = [curDecBeat / 2];
 
     if (shader4 != null)
-        shader4.shaderData.iTime.value = [curDecBeat / 2];
+        shader4.shaderData.iTime.value = [curDecBeat / 2];*/
 
     //PlayState.autoCamZooming = false;
     //PlayState.camZooming = false;
 
     if (PlayState.section != null && PlayState.section.mustHitSection) {
         PlayState.camFollow.setPosition(530, 480);
-        PlayState.defaultCamZoom = 0.75;
+        if (PlayState.get_difficulty() == "V1")
+            PlayState.defaultCamZoom = 1.2;
+        else
+            PlayState.defaultCamZoom = 0.75;
         switch(PlayState.boyfriend.animation.curAnim.name) {
             case "singLEFT":
                 PlayState.camFollow.x = PlayState.camFollow.x - ofs;
@@ -213,7 +217,7 @@ function update(elapsed:Float) {
                 PlayState.camFollow.y = PlayState.camFollow.y + ofs;
       }
     } else {
-        if (curStep > 815) {
+        if (curStep > 815 && PlayState.get_difficulty() != "V1") {
             PlayState.camFollow.setPosition(420, dadCamY - 350);
             PlayState.defaultCamZoom = 0.55;
         } else {
@@ -345,13 +349,16 @@ function stepHit(curStep:Int) {
             dx2old.visible = true;
         dx2old.shader = (shader = new CustomShader(Paths.shader("hotlineChara")));*/
 
-        changeDad(mod + ":dx2");
-        dad.cameras = [camChars];
+        if (PlayState.get_difficulty() == "V1")
+            changeDad(mod + ":scrapped");
+        else
+            changeDad(mod + ":dx2");
 
+        dad.cameras = [camChars];
         boyfriend.cameras = [camChars];
     }
 
-    if (curStep == 815) {
+    if (curStep == 815 && PlayState.get_difficulty() != "V1") {
         camBG.flash(0xAAFF0000, 1);
         pillar1.color = 0xFFFF3333;
         pillar2.color = 0xFFFF3333;
@@ -364,8 +371,8 @@ function stepHit(curStep:Int) {
         trees.color = 0xFFFF3333;
 
         changeDad(mod + ":dxbutgay");
-        dad.cameras = [camChars];
 
+        dad.cameras = [camChars];
         boyfriend.cameras = [camChars];
     }
 }

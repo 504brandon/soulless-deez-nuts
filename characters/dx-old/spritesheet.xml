@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="DX_Assets.png">
+<SubTexture name="idle0000" x="0" y="1203" width="430" height="586" frameX="-4" frameY="-7" frameWidth="451" frameHeight="596" />
+<SubTexture name="idle0001" x="430" y="1203" width="430" height="586" frameX="-4" frameY="-7" frameWidth="451" frameHeight="596" />
+<SubTexture name="idle0002" x="427" y="604" width="427" height="594" frameX="-4" frameY="0" frameWidth="451" frameHeight="596" />
+<SubTexture name="idle0003" x="1267" y="0" width="427" height="594" frameX="-4" frameY="0" frameWidth="451" frameHeight="596" />
+<SubTexture name="idle0004" x="1694" y="0" width="428" height="594" frameX="-1" frameY="-1" frameWidth="451" frameHeight="596" />
+<SubTexture name="idle0005" x="1694" y="594" width="427" height="594" frameX="-1" frameY="-1" frameWidth="451" frameHeight="596" />
+<SubTexture name="singDOWN0000" x="0" y="1789" width="422" height="575" frameX="-4" frameY="-3" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0001" x="2122" y="0" width="421" height="580" frameX="0" frameY="-1" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0002" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0003" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0004" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0005" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0006" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0007" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0008" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singDOWN0009" x="2122" y="0" width="421" height="580" frameX="0" frameY="0" frameWidth="444" frameHeight="582" />
+<SubTexture name="singLEFT0000" x="0" y="0" width="420" height="604" frameX="-6" frameY="0" frameWidth="427" frameHeight="604" />
+<SubTexture name="singLEFT0001" x="420" y="0" width="420" height="604" frameX="-6" frameY="0" frameWidth="427" frameHeight="604" />
+<SubTexture name="singLEFT0002" x="840" y="0" width="427" height="599" frameX="0" frameY="-5" frameWidth="427" frameHeight="604" />
+<SubTexture name="singLEFT0003" x="0" y="604" width="427" height="599" frameX="0" frameY="-5" frameWidth="427" frameHeight="604" />
+<SubTexture name="singRIGHT0000" x="860" y="1203" width="379" height="582" frameX="-8" frameY="-4" frameWidth="403" frameHeight="586" />
+<SubTexture name="singRIGHT0001" x="1239" y="1203" width="379" height="582" frameX="-8" frameY="-4" frameWidth="403" frameHeight="586" />
+<SubTexture name="singRIGHT0002" x="1267" y="594" width="385" height="586" frameX="0" frameY="0" frameWidth="403" frameHeight="586" />
+<SubTexture name="singRIGHT0003" x="854" y="604" width="385" height="586" frameX="0" frameY="0" frameWidth="403" frameHeight="586" />
+<SubTexture name="singUP0000" x="1618" y="1203" width="396" height="581" frameX="0" frameY="0" frameWidth="416" frameHeight="581" />
+<SubTexture name="singUP0001" x="2122" y="580" width="397" height="564" frameX="-3" frameY="-14" frameWidth="416" frameHeight="581" />
+</TextureAtlas>
