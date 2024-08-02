@@ -22,8 +22,8 @@
 		},
 		{
 			"indices": null,
-			"x": 60,
-			"y": -110,
+			"x": 140,
+			"y": -40,
 			"anim": "singDOWN0",
 			"loop": false,
 			"name": "singDOWN",
@@ -31,8 +31,8 @@
 		},
 		{
 			"indices": null,
-			"x": -80,
-			"y": -58,
+			"x": -38,
+			"y": -4,
 			"anim": "singRIGHT0",
 			"loop": false,
 			"name": "singRIGHT",
@@ -40,8 +40,8 @@
 		},
 		{
 			"indices": null,
-			"x": -54,
-			"y": -116,
+			"x": 36,
+			"y": -56,
 			"anim": "singLEFT0",
 			"loop": false,
 			"name": "singLEFT",
@@ -49,7 +49,7 @@
 		},
 		{
 			"indices": null,
-			"x": -90,
+			"x": -70,
 			"y": 0,
 			"anim": "singUP0",
 			"loop": false,

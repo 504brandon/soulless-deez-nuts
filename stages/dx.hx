@@ -237,7 +237,7 @@ function update(elapsed:Float) {
        }
     }
 
-  if (FlxG.keys.justPressed.SEVEN){
+  if (FlxG.keys.justPressed.SEVEN) {
     FlxG.scaleMode.width = 1280;
     FlxG.scaleMode.height = 720;
     FlxG.scaleMode.isWidescreen = false;
@@ -398,6 +398,20 @@ function beatHit(curBeat)
         // pillar1.shader = (shader = new CustomShader(Paths.shader("hotlineVHS")));
         PlayState.camGame.addShader(shader2 = new CustomShader(Paths.shader("hotlineVHS"))); //ty yoshi
         PlayState.camGame.flash(0xFFFF0000, 1);
+    }
+
+    if (curBeat == 204 && PlayState.get_difficulty() == "V1"){
+        // pillar1.shader = (shader = new CustomShader(Paths.shader("hotlineVHS")));
+        camBG.flash(0xAAFF0000, 1);
+        pillar1.color = 0xFFFF3333;
+        pillar2.color = 0xFFFF3333;
+        floor.color = 0xFFFF3333;
+        bushes.color = 0xFFFF3333;
+        green.color = 0xFFFF3333;
+        bg.color = 0xFFFF3333;
+        hill.color = 0xFFFF3333;
+        trees2.color = 0xFFFF3333;
+        trees.color = 0xFFFF3333;
     }
 
    if (boingySproingy){

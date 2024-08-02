@@ -5,8 +5,8 @@
 		"y": 0
 	},
 	"globalOffset": {
-		"x": -170,
-		"y": 170
+		"x": -40,
+		"y": 210
 	},
 	"healthbarColor": "#31B0D1",
 	"flipX": false,
@@ -15,7 +15,7 @@
 			"indices": null,
 			"x": 0,
 			"y": 0,
-			"anim": "dx2p idle",
+			"anim": "idle",
 			"loop": false,
 			"name": "idle",
 			"framerate": 24
@@ -23,35 +23,35 @@
 		{
 			"indices": null,
 			"x": -8,
-			"y": 27,
-			"anim": "dx2p singRIGHT0",
+			"y": -53,
+			"anim": "singRIGHT",
 			"loop": false,
 			"name": "singRIGHT",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": -19,
-			"y": 8,
-			"anim": "dx2p singDOWN0",
+			"x": 21,
+			"y": -86,
+			"anim": "singDOWN",
 			"loop": false,
 			"name": "singDOWN",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 12,
-			"y": 69,
-			"anim": "dx2p singUP0",
+			"x": 8,
+			"y": 65,
+			"anim": "singUP",
 			"loop": false,
 			"name": "singUP",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 20,
-			"y": -8,
-			"anim": "dx2p singLEFT0",
+			"x": 100,
+			"y": -60,
+			"anim": "singLEFT",
 			"loop": false,
 			"name": "singLEFT",
 			"framerate": 24
