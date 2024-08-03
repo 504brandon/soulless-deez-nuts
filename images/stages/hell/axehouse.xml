@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="axehouse.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="chop0000" x="2" y="2" width="389" height="188" frameX="-214" frameY="-194" frameWidth="633" frameHeight="399"/>
+</TextureAtlas>

@@ -3,13 +3,22 @@
 		{
 			"difficulties": [
 				"V1",
-                "V2",
+               			"V2",
 				"gay"
 			],
 			"char": "",
 			"bpm": 146,
 			"color": "#FFFFFF",
 			"name": "Gamebreaker"
+		},
+		{
+			"difficulties":[
+				"normal"
+			],
+			"char":"",
+			"bpm":146,
+			"color": "#FFFFFF",
+			"name": "decathect"
 		}
 	]
 }
