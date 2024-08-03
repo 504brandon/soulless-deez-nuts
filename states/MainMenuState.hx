@@ -1,8 +1,11 @@
+import Highscore;
 import LoadingState;
+import dev_toolbox.ToolboxMain;
+
 import flixel.math.FlxMath;
 
 var songIcons = [];
-var songs = [["gamebreaker", ["V1", "V2"], true], ["cuckshedder", ["V1", "V2"], true], ["robbery", ["hard"], false]];
+var songs = [["gamebreaker", ["V1", "V2"], true], ["cuckshedder", ["V1", "V2"], true], ["robbery", ["hard"], false], ["milk", ["hard"], false]];
 
 var bg;
 var songText;
@@ -67,6 +70,9 @@ function update(elapsed) {
         LoadingState.loadAndSwitchState(new PlayState());
     }
 
+    if (FlxG.keys.justPressed.SEVEN)
+        FlxG.switchState(new ToolboxMain());
+
     var iconIndex = -1;
 
     for (obj in songIcons) {
@@ -90,7 +96,7 @@ function changeSong(amt:Int = 0) {
     resetDiffText();
     reloadSongImage();
 
-    songText.text = "< " + songs[selectedSong][0].toUpperCase() + " >";
+    songText.text = "< " + songs[selectedSong][0].toUpperCase() + " | " + Highscore.getModScore(mod, songs[selectedSong][0], songs[selectedSong][1][curDiff]) + " >";
 
     bg.loadGraphic(Paths.image(songs[selectedSong][0].toLowerCase() + "BG"));
     bg.screenCenter();
@@ -126,6 +132,8 @@ function resetDiffText() {
         else if (curDiff == 1)
             diffText.text = "↑\n09/08/2022\n↓";
     }
+
+    songText.text = "< " + songs[selectedSong][0].toUpperCase() + " | " + Highscore.getModScore(mod, songs[selectedSong][0], songs[selectedSong][1][curDiff]) + " >";
 }
 
 function reloadSongImage() {

@@ -164,9 +164,6 @@ function createPost() {
     dadCamY = 444;
 }
 
-var ofs:Int = 10;
-var ofs2:Int = 30;
-
 function update(elapsed:Float) {
 
     camChars.scroll.x = PlayState.camGame.scroll.x;
@@ -201,16 +198,6 @@ function update(elapsed:Float) {
             PlayState.defaultCamZoom = 1.2;
         else
             PlayState.defaultCamZoom = 0.75;
-        switch(PlayState.boyfriend.animation.curAnim.name) {
-            case "singLEFT":
-                PlayState.camFollow.x = PlayState.camFollow.x - ofs;
-            case "singRIGHT":
-                PlayState.camFollow.x = PlayState.camFollow.x + ofs;
-            case "singUP":
-                PlayState.camFollow.y = PlayState.camFollow.y - ofs;
-            case "singDOWN":
-                PlayState.camFollow.y = PlayState.camFollow.y + ofs;
-      }
     } else {
         if (curStep > 815 && PlayState.get_difficulty() != "V1") {
             PlayState.camFollow.setPosition(420, dadCamY - 350);
@@ -219,17 +206,6 @@ function update(elapsed:Float) {
             PlayState.camFollow.setPosition(420, dadCamY);
             PlayState.defaultCamZoom = 1.3;
         }
-
-         switch(PlayState.dad.animation.curAnim.name) {
-             case "singLEFT" :
-                 PlayState.camFollow.x = PlayState.camFollow.x - ofs2;
-             case "singRIGHT":
-                 PlayState.camFollow.x = PlayState.camFollow.x + ofs2;
-             case "singUP":
-                 PlayState.camFollow.y = PlayState.camFollow.y - ofs2;
-             case "singDOWN":
-                 PlayState.camFollow.y = PlayState.camFollow.y + ofs2;
-       }
     }
 
   if (FlxG.keys.justPressed.SEVEN) {

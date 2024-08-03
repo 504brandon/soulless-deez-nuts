@@ -1,13 +1,20 @@
 import ModSupport;
 
 var creditList = [
-    "Gamebreaker" => ["by Saster", 4.1, 2.1, 45, "CODING:\n[504]Brandon\nPaige\nShadowsBigNuts\n\nMUSIC:\nSaster\nRiverMusic\n\nCHARTING:\nStarzinark"],
-    "Cuckshedder" => ["schlatt", 4.1, 2.1, 45, "CODING:\n[504]Brandon\nPaige\nShadowsBigNuts\n\nMUSIC:\nSaster\nPaige\nShadowsBigNuts"],
-    "Robbery" => ["by Saster", 0, 2.1, 55, "CODING:\n[504]brandon\n\nMUSIC:\nSaster\n\nCHARTING\nKaseroYT"]
+    "Gamebreaker" => ["By Saster", 4.1, 2.1, 45, "CODING:\n[504]Brandon\nPaige\n\nMUSIC:\nSaster\nRiverMusic\n\nCHARTING:\nStarzinark"],
+    "Cuckshedder" => ["schlatt", 4.1, 2.1, 45, "CODING:\n[504]Brandon\nPaige\n\nMUSIC:\nSaster\nPaige"],
+    "Robbery" => ["By Saster", 0, 2.1, 55, "CODING:\n[504]brandon\n\nMUSIC:\nSaster\n\nCHARTING\nKaseroYT"],
+    "Milk" => ["By Squeak", 2, 3.1, 55, "CODING:\n[504]brandon\nPaige\n\nMUSIC:\nSqueak\n\nCHARTING\nNiffirg"]
 ];
+
 var credit = creditList.get(FlxG.state.SONG.song);
 
 function createPost() {
+    trace(credit);
+
+    if (credit == null)
+        credit = creditList.get(FlxG.state.SONG.song);
+
     var box = new FlxSprite().loadGraphic(Paths.image("box"));
     box.cameras = [camHUD];
     box.setGraphicSize(Std.int(box.height * 0.8));
