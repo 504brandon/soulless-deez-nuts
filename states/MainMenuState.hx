@@ -4,6 +4,8 @@ import flixel.math.FlxMath;
 var songIcons = [];
 var songs = [["gamebreaker", ["V1", "V2"], true], ["cuckshedder", ["V1", "V2"], true], ["robbery", ["hard"], false]];
 
+var bg;
+var songText;
 var diffText;
 
 var selectedSong = 0;
@@ -15,33 +17,9 @@ function create() {
     FlxG.scaleMode.height = 720;
     FlxG.scaleMode.isWidescreen = false;
 
-    var bg = new FlxSprite(-913, -500).loadGraphic(Paths.image('stages/dx/bg'));
-    bg.antialiasing = true;
+    bg = new FlxSprite().loadGraphic(Paths.image(songs[selectedSong][0].toLowerCase() + "BG"));
+    bg.screenCenter();
     add(bg);
-
-    var hill = new FlxSprite(-350, 1).loadGraphic(Paths.image('stages/dx/hills'));
-    hill.antialiasing = true;
-    hill.scale.set(0.6, 0.6);
-    add(hill);
-
-    var trees = new FlxSprite(-913, 134).loadGraphic(Paths.image('stages/dx/trees'));
-    trees.antialiasing = true;
-    trees.scale.set(0.7, 0.7);
-    add(trees);
-
-    var pillar2 = new FlxSprite(-498, -1116).loadGraphic(Paths.image('stages/dx/pillar2'));
-    pillar2.antialiasing = true;
-    add(pillar2);
-
-    var pillar1 = new FlxSprite(700, -1257).loadGraphic(Paths.image('stages/dx/pillar1'));
-    pillar1.antialiasing = true;
-    add(pillar1);
-
-    var bar1 = new FlxSprite(0, -135).makeGraphic(FlxG.width, 250, 0xff000000);
-    add(bar1);
-
-    var bar2 = new FlxSprite(0, 600).makeGraphic(FlxG.width, 250, 0xff000000);
-    add(bar2);
 
     var iconIndex = -1;
 
@@ -62,12 +40,16 @@ function create() {
         add(gayBroker);
     }
 
-    for (obj in [bg, hill, trees, pillar2, pillar1])
-        obj.x += 200;
+    songText = new FlxText(0, FlxG.height * 0.88, FlxG.width, "", 45);
+    songText.setFormat(Paths.font("vcr.ttf"), 45, 0xFFffffff, "center");
+    add(songText);
 
-    diffText = new FlxText(0, -5, FlxG.width, "↑\nNORMAL\n↓", 45);
+    diffText = new FlxText(0, -5, FlxG.width, "", 45);
     diffText.setFormat(Paths.font("vcr.ttf"), 45, 0xFFffffff, "center");
     add(diffText);
+
+    changeSong(0);
+    changeDiff(0);
 }
 
 function update(elapsed) {
@@ -107,6 +89,16 @@ function changeSong(amt:Int = 0) {
 
     resetDiffText();
     reloadSongImage();
+
+    songText.text = "< " + songs[selectedSong][0].toUpperCase() + " >";
+
+    bg.loadGraphic(Paths.image(songs[selectedSong][0].toLowerCase() + "BG"));
+    bg.screenCenter();
+
+    var ost = Paths.modInst(songs[selectedSong][0], mod, "");
+    if (ost != null) {
+        FlxG.sound.playMusic(ost);
+    }
 
     trace(selectedSong);
 }
