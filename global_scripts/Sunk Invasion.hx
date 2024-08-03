@@ -1,19 +1,20 @@
 var sunkTween;
 
 function beatHit() {
-	if (curBeat > 100 && curBeat < 219 || curBeat > 292) {
+	if (curBeat > 100 && curBeat < 219 && FlxG.SONG.song.toLowerCase() == "milk" || curBeat > 292 && FlxG.SONG.song.toLowerCase() == "milk" || FlxG.save.data.breakerOptions.get("Sunk Invasion")[1] == true) {
 		sunkinTime();
 	}
 }
 
 function sunkinTime() { // recoded some of this it aint all paiges code lol
-    if (sunkTween == null) {
+    if (sunkTween == null || FlxG.save.data.breakerOptions.get("Sunk Limiter")[1] == false) {
         var sunkee = new FlxSprite(0, 0).loadGraphic(Paths.image('sunks/sunkee' + FlxG.random.int(1, 39)));
         sunkee.updateHitbox();
         sunkee.antialiasing = true;
         sunkee.scrollFactor.set(0, 0);
         sunkee.active = false;
-        sunkee.cameras = [camHUD];
+        if (FlxG.save.data.breakerOptions.get("Sunks On Hud")[1] == true)
+            sunkee.cameras = [camHUD];
         // sunkee.flipX = sunkFlip;
         sunkee.scale.x = FlxG.random.float(1.2, 2.2);
         sunkee.scale.y = sunkee.scale.x;

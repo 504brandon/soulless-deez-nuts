@@ -15,6 +15,14 @@ var selectedSong = 0;
 var curDiff:Int = 0;
 
 function create() {
+    if (FlxG.save.data.breakerOptions == null)
+        FlxG.switchState(new ModState("BreakerOptions", mod));
+
+    if (FlxG.save.data.breakerOptions.get("Gay Mode")[1] == true) {
+        for (song in 0...songs.length)
+            songs[song][1].push("gay");
+    }
+
     FlxG.resizeWindow(1280, 720);
     FlxG.scaleMode.width = 1280;
     FlxG.scaleMode.height = 720;
@@ -73,6 +81,9 @@ function update(elapsed) {
     if (FlxG.keys.justPressed.SEVEN)
         FlxG.switchState(new ToolboxMain());
 
+    if (FlxG.keys.justPressed.F1)
+        FlxG.switchState(new ModState("BreakerOptions", mod));
+
     var iconIndex = -1;
 
     for (obj in songIcons) {
@@ -105,8 +116,6 @@ function changeSong(amt:Int = 0) {
     if (ost != null) {
         FlxG.sound.playMusic(ost);
     }
-
-    trace(selectedSong);
 }
 
 function changeDiff(amt:Int = 0) {
@@ -119,8 +128,6 @@ function changeDiff(amt:Int = 0) {
 
     resetDiffText();
     reloadSongImage();
-
-    trace(curDiff);
 }
 
 function resetDiffText() {

@@ -3,17 +3,16 @@ import ModSupport;
 var creditList = [
     "Gamebreaker" => ["By Saster", 4.1, 2.1, 45, "CODING:\n[504]Brandon\nPaige\n\nMUSIC:\nSaster\nRiverMusic\n\nCHARTING:\nStarzinark"],
     "Cuckshedder" => ["schlatt", 4.1, 2.1, 45, "CODING:\n[504]Brandon\nPaige\n\nMUSIC:\nSaster\nPaige"],
-    "Robbery" => ["By Saster", 0, 2.1, 55, "CODING:\n[504]brandon\n\nMUSIC:\nSaster\n\nCHARTING\nKaseroYT"],
+    "Robbery" => ["By DangenBruh", 0, 2.1, 55, "CODING:\n[504]brandon\n\nMUSIC:\nDangenBruh\n\nCHARTING\nKaseroYT"],
     "Milk" => ["By Squeak", 2, 3.1, 55, "CODING:\n[504]brandon\nPaige\n\nMUSIC:\nSqueak\n\nCHARTING\nNiffirg"]
 ];
 
-var credit = creditList.get(FlxG.state.SONG.song);
+var credit;
+
+var shouldHaveCreds = FlxG.save.data.breakerOptions.get("Credits")[1] == true;
 
 function createPost() {
-    trace(credit);
-
-    if (credit == null)
-        credit = creditList.get(FlxG.state.SONG.song);
+    credit = creditList.get(FlxG.state.SONG.song);
 
     var box = new FlxSprite().loadGraphic(Paths.image("box"));
     box.cameras = [camHUD];
@@ -42,6 +41,10 @@ function createPost() {
                 obj.destroy();
             }});
         }});
+
+        if (!shouldHaveCreds) {
+            obj.destroy();
+        }    
     }
 }
 
@@ -51,7 +54,7 @@ function updatePost() {
     }
 
     if (PlayState.get_difficulty() == "gay")
-        FlxG.sound.music.pitch = FlxG.random.float(1, 1.5);
+        FlxG.sound.music.pitch = FlxG.random.float(1, 7.5);
 }
 
 function destroy() {

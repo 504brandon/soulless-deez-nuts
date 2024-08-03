@@ -156,8 +156,10 @@ function createPost() {
     PlayState.boyfriend.y = bfY;
     // PlayState.boyfriend.scrollFactor.set(0.9, 0.9);
 
-    PlayState.dad.x = 134.55;
-    PlayState.dad.y = 244.3;
+    if (FlxG.state.SONG.song.toLowerCase() != "cuckshedder") {
+        PlayState.dad.x = 134.55;
+        PlayState.dad.y = 244.3;
+    }
     
     PlayState.gf.visible = false;
 
