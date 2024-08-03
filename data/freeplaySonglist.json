@@ -10,6 +10,16 @@
 			"bpm": 146,
 			"color": "#FFFFFF",
 			"name": "Gamebreaker"
+		},
+		{
+			"difficulties": [
+				"V1",
+				"V2"
+			],
+			"char": "",
+			"bpm": 146,
+			"color": "#FFFFFF",
+			"name": "Cuckshedder"
 		}
 	]
 }

@@ -62,12 +62,6 @@ function create() {
     hill.scrollFactor.set(0.3, 0.4);
     PlayState.add(hill);
 
-    /*trees2 = new FlxSprite(-713, -34).loadGraphic(Paths.image('stages/dx/trees2'));
-    trees2.antialiasing = true;
-    trees2.scale.set(0.7, 0.7);
-    trees2.scrollFactor.set(0.4, 0.2);
-    PlayState.add(trees2);*/
-
     trees = new FlxSprite(-913, 134).loadGraphic(Paths.image('stages/dx/trees'));
     trees.antialiasing = true;
     trees.scale.set(0.7, 0.7);
@@ -99,12 +93,13 @@ function create() {
     PlayState.add(floor);    
 
     if (PlayState.get_difficulty() == "gay") {
+        camGame.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
         camBG.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
         camChars.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
         camChars2.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
-
-        for (obj in [trees, hill, bg, trees])
-            obj.shader = new CustomShader(Paths.shader("rainbow"));
+        camHUD.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
+        camPicoNotes.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
+        camDXNotes.addShader(new CustomShader(Paths.shader("rainbow"))); //ty yoshi
     }
 
     /*bushes = new FlxSprite(-1654, -58).loadGraphic(Paths.image('stages/dx/bushes'));
@@ -238,6 +233,7 @@ function update(elapsed:Float) {
     }
 
   if (FlxG.keys.justPressed.SEVEN) {
+    FlxG.resizeWindow(1280, 720);
     FlxG.scaleMode.width = 1280;
     FlxG.scaleMode.height = 720;
     FlxG.scaleMode.isWidescreen = false;
