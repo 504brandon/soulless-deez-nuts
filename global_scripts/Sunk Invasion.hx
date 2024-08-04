@@ -1,7 +1,7 @@
 var sunkTween;
 
 function beatHit() {
-	if (curBeat > 100 && curBeat < 219 && FlxG.SONG.song.toLowerCase() == "milk" || curBeat > 292 && FlxG.SONG.song.toLowerCase() == "milk" || FlxG.save.data.breakerOptions.get("Sunk Invasion")[1] == true) {
+	if (curBeat > 100 && curBeat < 219 && FlxG.state.SONG.song == "Milk" || curBeat > 292 && FlxG.state.SONG.song == "Milk" || FlxG.save.data.breakerOptions.get("Sunk Invasion")[1] == true) {
 		sunkinTime();
 	}
 }
@@ -31,9 +31,8 @@ function sunkinTime() { // recoded some of this it aint all paiges code lol
 
                 sunkTween = FlxTween.tween(sunkee, {x: 1280 + sunkee.width}, sunkTime, {
                     onComplete: function(twn:FlxTween) {
-                        sunkTween = null;
-                        sunkTween.cancel();
                         sunkee.destroy();
+                        sunkTween = null;
                     }
                 });
 
@@ -43,9 +42,8 @@ function sunkinTime() { // recoded some of this it aint all paiges code lol
 
                 sunkTween = FlxTween.tween(sunkee, {y: 960 + sunkee.height}, sunkTime, {
                     onComplete: function(twn:FlxTween) {
-                        sunkTween = null;
-                        sunkTween.cancel();
                         sunkee.destroy();
+                        sunkTween = null;
                     }
                 });
 
@@ -55,9 +53,8 @@ function sunkinTime() { // recoded some of this it aint all paiges code lol
 
                 sunkTween = FlxTween.tween(sunkee, {x: 1280 + sunkee.width, y: 960 + sunkee.height}, sunkTime, {
                     onComplete: function(twn:FlxTween) {
-                        sunkTween = null;
-                        sunkTween.cancel();
                         sunkee.destroy();
+                        sunkTween = null;
                     }
                 });
 
@@ -67,9 +64,8 @@ function sunkinTime() { // recoded some of this it aint all paiges code lol
 
                 sunkTween = FlxTween.tween(sunkee, {x: 0 - sunkee.width, y: 0 - sunkee.height}, sunkTime, {
                     onComplete: function(twn:FlxTween) {
-                        sunkTween = null;
-                        sunkTween.cancel();
                         sunkee.destroy();
+                        sunkTween = null;
                     }
                 });
         }
