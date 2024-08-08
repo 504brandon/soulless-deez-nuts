@@ -16,7 +16,7 @@ var camChars:FlxCamera;
 var dx:Character = null;
 
 function create() {
-	camDXNotes = new FlxCamera(0, -30, 1280, 960, 1);
+	camDXNotes = new FlxCamera(0, -30, 2000, 960, 1);
 	camDXNotes.bgColor = new FlxColor(0x00000000);
 	FlxG.cameras.add(camDXNotes, false);
 	camDXNotes.height = 700;

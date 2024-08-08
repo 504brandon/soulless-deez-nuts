@@ -14,7 +14,7 @@ function create() {
 
 	stage = loadStage('dxnew');
 
-	camDX = new FlxCamera();
+	camDX = new FlxCamera(0, 0, 3000);
     camDX.bgColor = 0x00ffffff;
     FlxG.cameras.add(camDX);
 
@@ -44,7 +44,7 @@ function createPost() {
 		strumIndex++;
 
 		strum.angle = 90;
-		strum.setPosition(2950, 1250 + (85 * strumIndex));
+		strum.setPosition(1900, 1250 + (85 * strumIndex));
 	}
 }
 
