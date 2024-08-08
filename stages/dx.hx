@@ -28,6 +28,11 @@ function create() {
 	if (PlayState.get_difficulty() != "V1")
 		camDXNotes.addShader(shader3 = new CustomShader(Paths.shader("dx"))); // ty yoshi
 
+	FlxG.scaleMode.width = 1280;
+    FlxG.scaleMode.height = 960;
+    FlxG.scaleMode.isWidescreen = false;
+	FlxG.resizeWindow(1024, 768);
+
 	camBG = new FlxCamera(0, 0, 1280, 960, 1);
 	camBG.bgColor = new FlxColor(0x00000000);
 	FlxG.cameras.add(camBG, false);
@@ -102,28 +107,19 @@ var dadCamY:Float = 0;
 var shader:CustomShader = null;
 
 function createPost() {
-	for (i in 0...PlayState.cpuStrums.length) {
-		// PlayState.cpuStrums.members[i].set_notesAngle(90);
-		PlayState.cpuStrums.cameras = [camDXNotes];
-		for (i in unspawnNotes)
-			if (!i.mustPress)
-				i.cameras = [camDXNotes];
+	for (note in unspawnNotes)
+		if (!note.mustPress)
+			note.cameras = [camDXNotes];
 
-		// sets individual note X positions
-		// sets strumline Y coords to the variable
-		PlayState.getStrum(i).angle = 90;
-		PlayState.getStrum(i).visible = false;
-		PlayState.getStrum(i).cameras = [camDXNotes];
+	var strumIndex = -1;
+
+	for (strum in cpuStrums.members) {
+		strumIndex++;
+
+		strum.angle = 90;
+		strum.cameras = [camDXNotes];
+		strum.setPosition(1500, 95 + (145 * strumIndex));
 	}
-
-	PlayState.cpuStrums.members[0].x += 1300;
-	PlayState.cpuStrums.members[1].x += 1195;
-	PlayState.cpuStrums.members[2].x += 1085;
-	PlayState.cpuStrums.members[3].x += 970;
-	PlayState.cpuStrums.members[0].y += 64;
-	PlayState.cpuStrums.members[1].y += 128 + 64;
-	PlayState.cpuStrums.members[2].y += 64 + 64 + 64 + 64 + 64;
-	PlayState.cpuStrums.members[3].y += 64 + 64 + 64 + 64 + 64 + 64 + 64;
 
 	FlxG.cameras.add(camHUD, false);
 
@@ -134,11 +130,6 @@ function createPost() {
 	PlayState.scoreTxt.visible = false;
 	PlayState.dad.cameras = [camChars];
 	PlayState.boyfriend.cameras = [camChars];
-
-	FlxG.resizeWindow(1024, 768);
-	FlxG.scaleMode.width = 1280;
-	FlxG.scaleMode.height = 960;
-	FlxG.scaleMode.isWidescreen = false;
 
 	PlayState.boyfriend.x = bfX;
 	PlayState.boyfriend.y = bfY;
@@ -152,6 +143,7 @@ function createPost() {
 }
 
 function update(elapsed:Float) {
+
 	camChars.scroll.x = PlayState.camGame.scroll.x;
 	camChars.scroll.y = PlayState.camGame.scroll.y;
 	camChars.zoom = PlayState.camGame.zoom;

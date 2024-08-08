@@ -44,7 +44,7 @@ function createPost() {
 		strumIndex++;
 
 		strum.angle = 90;
-		strum.setPosition(2350, 1300 + (85 * strumIndex));
+		strum.setPosition(2450, 1250 + (85 * strumIndex));
 	}
 }
 
