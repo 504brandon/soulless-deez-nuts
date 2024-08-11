@@ -1,19 +1,19 @@
 import Conductor;
 import flixel.util.FlxTimer;
 
-var dx;
 var coolText;
-var enterText;
 var gayNum = 0;
 
 function create() {
 	FlxG.sound.playMusic(Paths.music('sdxnew'));
 	Conductor.changeBPM(132);
 
-	dx = new FlxSprite().loadGraphic(Paths.image('menu/title/dx'));
+	var dx = new FlxSprite().loadGraphic(Paths.image('menu/title/dx'));
 	dx.screenCenter();
 	dx.updateHitbox();
 	dx.antialiasing = true;
+	FlxTween.tween(dx.scale, {x: -1}, 1, {ease: FlxEase.cubeInOut, type: 4});
+	FlxTween.tween(dx, {y: dx.y - 25}, 1, {ease: FlxEase.cubeInOut, type: 4});
 	add(dx);
 
 	var circle = new FlxSprite().loadGraphic(Paths.image('menu/title/omg'));
@@ -29,10 +29,11 @@ function create() {
 	coolText.antialiasing = true;
 	add(coolText);
 
-	enterText = new FlxSprite(-35, 430).loadGraphic(Paths.image('menu/title/enter'));
+	var enterText = new FlxSprite(-35, 430).loadGraphic(Paths.image('menu/title/enter'));
 	enterText.scale.set(0.25, 0.25);
 	enterText.updateHitbox();
 	enterText.antialiasing = true;
+	FlxTween.tween(enterText, {y: 440, angle: 5}, 0.2, {ease: FlxEase.cubeInOut, type: 4});
 	add(enterText);
 }
 
@@ -62,7 +63,7 @@ function update(elapsed:Float) {
 
     if (controls.ACCEPT) {
         FlxG.sound.play(Paths.sound("UwU"));
-        FlxG.camera.flash(0xff9f0000, 0.35);
+        FlxG.camera.flash(0xff9f0000, 0.85);
         new FlxTimer().start(1.3, function() {
             FlxG.switchState(new MainMenuState());
         });
@@ -77,8 +78,10 @@ function beatHit() {
 		  else
 		FlxTween.tween(dx, {angle: -15}, 0.2, {ease: FlxEase.smootherStepOut}); */
 
-	coolText.scale.set(0.30, 0.30);
-	FlxTween.tween(coolText.scale, {x: 0.25, y: 0.25}, 0.2, {ease: FlxEase.elasticInOut});
+	if (curBeat % 2 == 0) {
+		coolText.scale.set(0.26, 0.26);
+		FlxTween.tween(coolText.scale, {x: 0.25, y: 0.25}, 0.2, {ease: FlxEase.elasticInOut});
+	}
 }
 
 function gayify() {

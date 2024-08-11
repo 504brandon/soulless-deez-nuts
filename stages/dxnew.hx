@@ -41,9 +41,12 @@ function createPost() {
 	for (obj in [scoreTxt, healthBarBG, healthBar, iconP1, iconP2])
 		obj.kill();
 
-	for (note in unspawnNotes)
+	for (note in unspawnNotes) {
 		if (!note.mustPress)
 			note.cameras = [camDX];
+		//else
+			//note.set_angle(75);
+	}
 
 	var strumIndex = -1;
 
@@ -52,6 +55,15 @@ function createPost() {
 
 		strum.angle = 90;
 		strum.setPosition(1900, 1300 + (85 * strumIndex));
+	}
+
+	var strumIndex = -1;
+
+	for (strum in playerStrums.members) {
+		strumIndex++;
+
+		strum.set_notesScale(0.89);
+		strum.x -= strumIndex * 15;
 	}
 }
 
@@ -81,7 +93,7 @@ function updatePost(elapsed) {
 		if (curStep > 815)
 			PlayState.defaultCamZoom = 0.75;
 		else
-			PlayState.defaultCamZoom = 1.12;
+			PlayState.defaultCamZoom = 1.25;
 	}
 }
 

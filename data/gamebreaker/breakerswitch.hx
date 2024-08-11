@@ -8,7 +8,7 @@ function create() {
 function createPost() {
     camChars2 = new FlxCamera(0, 0, 1280, 960, 1);
 	camChars2.bgColor = new FlxColor(0x00000000);
-	FlxG.cameras.add(camChars2, false);
+	FlxG.cameras.add(camChars2);
 
     if (PlayState.get_difficulty() == "gay") {
         camChars2.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
