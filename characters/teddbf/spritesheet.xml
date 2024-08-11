@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bunziefunsiefriendly.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle0000" x="1" y="1" width="320" height="481"/>
+	<SubTexture name="idle0001" x="322" y="1" width="320" height="481"/>
+	<SubTexture name="idle0002" x="643" y="1" width="320" height="481"/>
+	<SubTexture name="idle0003" x="643" y="1" width="320" height="481"/>
+	<SubTexture name="idle0004" x="964" y="1" width="320" height="481"/>
+	<SubTexture name="idle0005" x="1285" y="1" width="320" height="481"/>
+	<SubTexture name="idle0006" x="1" y="483" width="320" height="481"/>
+	<SubTexture name="idle0007" x="1" y="483" width="320" height="481"/>
+	<SubTexture name="idle0008" x="1" y="483" width="320" height="481"/>
+	<SubTexture name="idle0009" x="1" y="483" width="320" height="481"/>
+	<SubTexture name="singDOWN0000" x="322" y="483" width="342" height="386"/>
+	<SubTexture name="singDOWN0001" x="665" y="483" width="342" height="386"/>
+	<SubTexture name="singLEFT0000" x="1008" y="483" width="366" height="416"/>
+	<SubTexture name="singLEFT0001" x="1375" y="483" width="366" height="416"/>
+	<SubTexture name="singRIGHT0000" x="1" y="965" width="395" height="463"/>
+	<SubTexture name="singRIGHT0001" x="397" y="965" width="395" height="463"/>
+	<SubTexture name="singUP0000" x="793" y="965" width="420" height="540"/>
+	<SubTexture name="singUP0001" x="1214" y="965" width="420" height="540"/>
+</TextureAtlas>

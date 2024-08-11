@@ -1,0 +1,168 @@
+import flixel.FlxCamera;
+
+var lick:FlxSound = null;
+var lickCounter:Int = 0;
+var lickTime:Bool = false;
+var lickCount:FlxText;
+var lickCountX:Float = 0;
+var lickWarn:FlxText;
+var lickWarnY:Float = 0;
+var bfX:Float = 0;
+var bfTween:FlxTween;
+var bfTweenin:Bool = false;
+var bfArrived:Bool = false;
+var lickingAllowed:Bool = false;
+var camStuff:FlxCamera;
+var bouncay:Bool = true;
+
+function createPost() {
+	lick = Paths.sound("lick");
+
+	camStuff = new FlxCamera(0, 0, 1280, 720, 1);
+	camStuff.bgColor = new FlxColor(0xFF000000);
+	FlxG.cameras.add(camStuff, false);
+
+	lickCount = new FlxText(-200, 600, 999, "i am a number", 44);
+	lickCount.setFormat(Paths.font("silly.ttf"), 69, 0xFFFFFFFF, "left", scoreTxt.borderStyle, 0xFF000000);
+	lickCount.borderSize = 5;
+	lickCount.cameras = [camStuff];
+	PlayState.add(lickCount);
+
+	lickWarn = new FlxText(60, 500, 999, "EVERYONE START LICKING!!!!\nWE CAN SAVE HIM!!!!!!", 44);
+	lickWarn.setFormat(Paths.font("silly.ttf"), 60, 0xFFFFAA00, "center", scoreTxt.borderStyle, 0xFF000000);
+	lickWarn.borderSize = 5;
+	lickWarn.cameras = [camStuff];
+	lickWarn.screenCenter("X");
+	lickWarn.y = -200;
+	PlayState.add(lickWarn);
+
+	lickCount.visible = false;
+	lickWarn.visible = false;
+}
+
+function update(elapsed) {
+	if (PlayState.section != null && PlayState.section.mustHitSection) {
+		lickTime = false;
+	} else {
+		lickTime = true;
+	}
+}
+
+function lickPopUp() {
+	rating = new FlxSprite(0, 0).loadGraphic(Paths.image("stages/icecube/lickedTxt"));
+	rating.screenCenter();
+	rating.y -= 10;
+	rating.x -= 300;
+	rating.acceleration.y = 800;
+	rating.velocity.y -= FlxG.random.int(240, 405);
+	rating.velocity.x -= FlxG.random.int(0, 100);
+	rating.scale.set(FlxG.random.float(0.8, 1.1), FlxG.random.float(0.8, 1.1));
+	PlayState.add(rating);
+
+	rating.updateHitbox();
+
+	FlxTween.tween(rating, {alpha: 0}, 0.2, {startDelay: 0.5});
+}
+
+function saveHim() {
+	if (FlxG.keys.justPressed.SPACE || FlxG.keys.justPressed.SHIFT || FlxG.keys.pressed.NINE) {
+		if (bfArrived) {
+			FlxG.sound.play(lick);
+			lickCounter++;
+
+			if (FlxG.keys.pressed.NINE) {
+				lickCounter = lickCounter * 2;
+			}
+
+			lickCount.x += 10;
+			lickPopUp();
+			camStuff.shake(0.01, 0.1);
+		}
+
+		if (!bfTweenin && !bfArrived) {
+			if (bfTween != null)
+				bfTween.cancel();
+
+			bfTweenin = true;
+			bfTween = FlxTween.tween(PlayState.boyfriend, {x: bfX}, 0.6, {
+				ease: FlxEase.quadInOut,
+
+				onComplete: function(twn:FlxTween) {
+					bfTweenin = false;
+					bfArrived = true;
+					bfTween.cancel();
+				}
+			});
+		}
+	}
+}
+
+function updatePost(elapsed:Float) {
+	if (!lickingAllowed) {
+		// lol
+	} else {
+		if (lickTime) {
+			saveHim();
+			lickCountX = 60;
+			lickWarnY = 80;
+			bfX = PlayState.dad.x + 500;
+		} else {
+			lickCountX = -300;
+			lickWarnY = -200;
+			bfX = 812.35;
+		}
+
+		if (bfArrived && !lickTime) {
+			bfArrived = false;
+			FlxG.sound.play(lick);
+
+			if (bfTween != null)
+				bfTween.cancel();
+
+			bfTweenin = true;
+
+			bfTween = FlxTween.tween(PlayState.boyfriend, {x: bfX}, 1, {
+				ease: FlxEase.sineInOut,
+				startDelay: 0.5,
+				onComplete: function(twn:FlxTween) {
+					bfTweenin = false;
+					bfTween.cancel();
+				}
+			});
+		}
+
+		lickCount.text = "licks: " + lickCounter;
+		lickCount.x = FlxMath.lerp(lickCount.x, lickCountX, 0.1);
+		lickWarn.y = FlxMath.lerp(lickWarn.y, lickWarnY, 0.1);
+	}
+}
+
+function beatHit(curBeat) {
+	lickCount.visible = true;
+	lickWarn.visible = true;
+	lickingAllowed = true;
+
+	if (bouncay) {
+		PlayState.boyfriend.scale.set(0.9, 1.1);
+		PlayState.boyfriend.y = 115 - 5;
+		FlxTween.tween(PlayState.boyfriend.scale, {x: 1, y: 1}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+		FlxTween.tween(PlayState.boyfriend, {y: 124.75}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+
+		PlayState.dad.scale.set(1.15, 0.9);
+		PlayState.dad.y = 172 - 37;
+		FlxTween.tween(PlayState.dad.scale, {x: 1, y: 1}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+		FlxTween.tween(PlayState.dad, {y: 152.4 - 37}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+		bouncay = false;
+	} else {
+		PlayState.boyfriend.scale.set(1.15, 0.9);
+		PlayState.boyfriend.y = 145;
+		FlxTween.tween(PlayState.boyfriend.scale, {x: 1, y: 1}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+		FlxTween.tween(PlayState.boyfriend, {y: 124.75}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+
+		PlayState.dad.scale.set(0.9, 1.1);
+		PlayState.dad.y = 142 - 37 - 5;
+		FlxTween.tween(PlayState.dad.scale, {x: 1, y: 1}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+		FlxTween.tween(PlayState.dad, {y: 152.4 - 37}, Conductor.stepCrochet * 0.0019, {ease: FlxEase.quadOut});
+		bouncay = true;
+	}
+}

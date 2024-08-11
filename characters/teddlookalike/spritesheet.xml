@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="hareterfuge.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="2469" y="0" width="560" height="1364" frameX="-272" frameY="-82" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="idle0001" x="3029" y="0" width="559" height="1364" frameX="-272" frameY="-82" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="up0000" x="1297" y="0" width="582" height="1446" frameX="-241" frameY="0" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="up0001" x="698" y="0" width="599" height="1445" frameX="-231" frameY="-1" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="down0000" x="1879" y="1312" width="570" height="1117" frameX="-310" frameY="-340" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="down0001" x="3588" y="1313" width="560" height="1148" frameX="-317" frameY="-311" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="left0000" x="3588" y="0" width="575" height="1313" frameX="-54" frameY="-141" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="left0001" x="1879" y="0" width="590" height="1312" frameX="-49" frameY="-142" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="right0000" x="0" y="1282" width="693" height="1288" frameX="-347" frameY="-177" frameWidth="1050" frameHeight="1534"/>
+	<SubTexture name="right0001" x="0" y="0" width="698" height="1282" frameX="-336" frameY="-183" frameWidth="1050" frameHeight="1534"/>
+</TextureAtlas>

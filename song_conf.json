@@ -27,6 +27,13 @@
 			"end_cutscene": null,
 			"cutscene": null,
 			"name": "robbery"
+		},
+		{
+			"scripts": [],
+			"difficulties": [],
+			"end_cutscene": null,
+			"cutscene": null,
+			"name": "icecube"
 		}
 	]
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="goofyfunnigf.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle0000" x="1" y="1" width="334" height="575"/>
+	<SubTexture name="idle0001" x="336" y="1" width="334" height="575"/>
+	<SubTexture name="idle0002" x="671" y="1" width="334" height="575"/>
+	<SubTexture name="idle0003" x="1006" y="1" width="334" height="575"/>
+	<SubTexture name="idle0004" x="1341" y="1" width="334" height="575"/>
+	<SubTexture name="idle0005" x="1" y="577" width="334" height="575"/>
+	<SubTexture name="idle0006" x="336" y="577" width="334" height="575"/>
+	<SubTexture name="idle0007" x="671" y="577" width="334" height="575"/>
+	<SubTexture name="idle0008" x="1006" y="577" width="334" height="575"/>
+	<SubTexture name="idle0009" x="1341" y="577" width="334" height="575"/>
+	<SubTexture name="singDOWN0000" x="1" y="1153" width="366" height="495"/>
+	<SubTexture name="singDOWN0001" x="368" y="1153" width="366" height="495"/>
+	<SubTexture name="singLEFT0000" x="735" y="1153" width="392" height="568"/>
+	<SubTexture name="singLEFT0001" x="1128" y="1153" width="392" height="568"/>
+	<SubTexture name="singRIGHT0000" x="1" y="1722" width="401" height="559"/>
+	<SubTexture name="singRIGHT0001" x="403" y="1722" width="401" height="559"/>
+	<SubTexture name="singUP0000" x="805" y="1722" width="409" height="671"/>
+	<SubTexture name="singUP0001" x="1215" y="1722" width="409" height="671"/>
+</TextureAtlas>

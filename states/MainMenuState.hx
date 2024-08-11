@@ -5,7 +5,7 @@ import dev_toolbox.ToolboxMain;
 import flixel.math.FlxMath;
 
 var songIcons = [];
-var songs = [["gamebreaker", ["V1", "V2", "V2old"], true], ["cuckshedder", ["V1", "V2"], true], ["robbery", ["hard"], false], ["milk", ["hard"], false]];
+var songs = [["gamebreaker", ["V1", "V2"], true], ["cuckshedder", ["V1", "V2"], true], ["robbery", ["hard"], false], ["milk", ["hard"], false], ["icecube", ["hard"], false]];
 
 var bg;
 var songText;
@@ -18,7 +18,7 @@ function create() {
     if (FlxG.save.data.breakerOptions == null)
         FlxG.switchState(new ModState("BreakerOptions", mod));
 
-    if (FlxG.save.data.breakerOptions.get("Gay Mode")[1] == true) {
+    if (FlxG.save.data.gayMode == true) {
         for (song in 0...songs.length)
             songs[song][1].push("gay");
     }
@@ -28,7 +28,7 @@ function create() {
     FlxG.scaleMode.height = 720;
     FlxG.scaleMode.isWidescreen = false;
 
-    bg = new FlxSprite().loadGraphic(Paths.image(songs[selectedSong][0].toLowerCase() + "BG"));
+    bg = new FlxSprite().loadGraphic(Paths.image("menu/main/stages/" + songs[selectedSong][0].toLowerCase() + "BG"));
     bg.screenCenter();
     add(bg);
 
@@ -40,11 +40,11 @@ function create() {
         var gayBroker;
 
         if (songs[iconIndex][2] == true)
-            gayBroker = new FlxSprite().loadGraphic(Paths.image("songs/" + song[0] + "-" + song[1][0]));
+            gayBroker = new FlxSprite().loadGraphic(Paths.image("menu/main/songs/" + song[0] + "-" + song[1][0]));
         else 
-            gayBroker = new FlxSprite().loadGraphic(Paths.image("songs/" + song[0]));
+            gayBroker = new FlxSprite().loadGraphic(Paths.image("menu/main/songs/" + song[0]));
         if (gayBroker.graphic == null)
-            gayBroker.loadGraphic(Paths.image("songs/placeholder"));
+            gayBroker.loadGraphic(Paths.image("menu/main/songs/placeholder"));
         gayBroker.scale.set(0.7, 0.7);
         gayBroker.screenCenter();
         songIcons.push(gayBroker);
@@ -78,6 +78,9 @@ function update(elapsed) {
         LoadingState.loadAndSwitchState(new PlayState());
     }
 
+    if (controls.BACK)
+        FlxG.switchState(new ModState("BreakerTitle", mod));
+
     if (FlxG.keys.justPressed.SEVEN)
         FlxG.switchState(new ToolboxMain());
 
@@ -109,7 +112,7 @@ function changeSong(amt:Int = 0) {
 
     songText.text = "< " + songs[selectedSong][0].toUpperCase() + " | " + Highscore.getModScore(mod, songs[selectedSong][0], songs[selectedSong][1][curDiff]) + " >";
 
-    bg.loadGraphic(Paths.image(songs[selectedSong][0].toLowerCase() + "BG"));
+    bg.loadGraphic(Paths.image("menu/main/stages/" + songs[selectedSong][0].toLowerCase() + "BG"));
     bg.screenCenter();
 
     var ost = Paths.modInst(songs[selectedSong][0], mod, "");
@@ -149,12 +152,12 @@ function reloadSongImage() {
     var gayBroker;
 
     if (songs[selectedSong][2] == true)
-        gayBroker = new FlxSprite().loadGraphic(Paths.image("songs/" + songs[selectedSong][0] + "-" + songs[selectedSong][1][curDiff]));
+        gayBroker = new FlxSprite().loadGraphic(Paths.image("menu/main/songs/" + songs[selectedSong][0] + "-" + songs[selectedSong][1][curDiff]));
     else 
-        gayBroker = new FlxSprite().loadGraphic(Paths.image("songs/" + songs[selectedSong][0]));
+        gayBroker = new FlxSprite().loadGraphic(Paths.image("menu/main/songs/" + songs[selectedSong][0]));
 
     if (gayBroker.graphic == null)
-        gayBroker.loadGraphic(Paths.image("songs/placeholder"));
+        gayBroker.loadGraphic(Paths.image("menu/main/songs/placeholder"));
     gayBroker.scale.set(0.7, 0.7);
     gayBroker.screenCenter();
     add(gayBroker);

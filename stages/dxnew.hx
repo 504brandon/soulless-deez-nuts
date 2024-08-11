@@ -26,6 +26,13 @@ function create() {
 		obj.cameras = [camMain];
 
 	camDX.addShader(new CustomShader(Paths.shader("dx")));
+
+	if (PlayState.get_difficulty() == "gay") {
+		camHUD.addShader(new CustomShader(Paths.shader("rainbow")));
+		camGame.addShader(new CustomShader(Paths.shader("rainbow")));
+		camMain.addShader(new CustomShader(Paths.shader("rainbow")));
+		camDX.addShader(new CustomShader(Paths.shader("rainbow")));
+	}
 }
 
 function createPost() {
@@ -44,7 +51,7 @@ function createPost() {
 		strumIndex++;
 
 		strum.angle = 90;
-		strum.setPosition(1900, 1250 + (85 * strumIndex));
+		strum.setPosition(1900, 1300 + (85 * strumIndex));
 	}
 }
 

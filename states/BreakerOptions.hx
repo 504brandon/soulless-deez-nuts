@@ -1,10 +1,9 @@
 var options = [
 	"Credits" => ["Credits or somthing", true],
-	"Gay Mode" => ["Makes everything GAY", false],
 	"Souless DX Pause" => ["Makes the pause menu look like the Souless DX one", true],
 	"Sunks On Hud" => ["Should the sunks in milk be on the game cam or the hud cam", true],
 	"Sunk Invasion" => ["...", false],
-    "Sunk Limiter" => ["The sunk is infinite", false]
+    "Sunk Limiter" => ["The sunk is infinite", true]
 ];
 
 var optionNames = [];

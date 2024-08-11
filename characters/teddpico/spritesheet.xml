@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pipopines.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle0000" x="1" y="1" width="326" height="521"/>
+	<SubTexture name="idle0001" x="328" y="1" width="326" height="521"/>
+	<SubTexture name="idle0002" x="655" y="1" width="326" height="521"/>
+	<SubTexture name="idle0003" x="655" y="1" width="326" height="521"/>
+	<SubTexture name="idle0004" x="982" y="1" width="326" height="521"/>
+	<SubTexture name="idle0005" x="1309" y="1" width="326" height="521"/>
+	<SubTexture name="idle0006" x="1" y="523" width="326" height="521"/>
+	<SubTexture name="idle0007" x="1" y="523" width="326" height="521"/>
+	<SubTexture name="idle0008" x="1" y="523" width="326" height="521"/>
+	<SubTexture name="idle0009" x="1" y="523" width="326" height="521"/>
+	<SubTexture name="singDOWN0000" x="328" y="523" width="400" height="426"/>
+	<SubTexture name="singDOWN0001" x="729" y="523" width="400" height="426"/>
+	<SubTexture name="singLEFT0000" x="1130" y="523" width="376" height="491"/>
+	<SubTexture name="singLEFT0001" x="1" y="1045" width="376" height="491"/>
+	<SubTexture name="singRIGHT0000" x="378" y="1045" width="376" height="499"/>
+	<SubTexture name="singRIGHT0001" x="755" y="1045" width="376" height="499"/>
+	<SubTexture name="singUP0000" x="1132" y="1045" width="345" height="648"/>
+	<SubTexture name="singUP0001" x="1478" y="1045" width="345" height="648"/>
+</TextureAtlas>
