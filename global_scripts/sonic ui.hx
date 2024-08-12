@@ -1,6 +1,3 @@
-EngineSettings.maxRatingsAllowed = 0;
-EngineSettings.showTimer = false;
-
 import flixel.util.FlxTimer;
 import flixel.util.FlxStringUtil;
 
@@ -32,6 +29,9 @@ function create() {
 
 if (sonicUISongs.contains(PlayState.jsonSongName.toLowerCase())) {
 	function createPost() {
+		EngineSettings.maxRatingsAllowed = 0;
+		EngineSettings.showTimer = false;
+
 		for (i in 0...4)
 			cpuStrums.members[i].visible = false;
 

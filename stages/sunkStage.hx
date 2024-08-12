@@ -8,6 +8,11 @@ function create() {
     FlxG.scaleMode.height = 960;
     FlxG.scaleMode.isWidescreen = false;
 	FlxG.resizeWindow(1024, 768);
+
+	if (PlayState.get_difficulty() == "gay") {
+		camHUD.addShader(new CustomShader(Paths.shader("rainbow")));
+		camGame.addShader(new CustomShader(Paths.shader("rainbow")));
+	  }  
 }
 
 function update(elapsed) {
