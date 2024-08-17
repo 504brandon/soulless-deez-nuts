@@ -11,7 +11,8 @@ var songs = [
 	["robbery", ["hard"], false],
 	["milk", ["hard"], false],
 	["icecube", ["hard"], false],
-	["crimson", ["hard"], false]
+	["crimson", ["hard"], false],
+	["malediction", ["hard"], false]
 ];
 
 var bg;
