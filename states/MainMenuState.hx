@@ -11,14 +11,15 @@ var songs = [
 	["robbery", ["hard"], false],
 	["milk", ["hard"], false],
 	["icecube", ["hard"], false],
-	["crimson", ["hard"], false]
+	["crimson", ["hard"], false],
+	["malediction", ["hard"], false]
 ];
 
 var bg;
 var songText;
 var diffText;
 var selectedSong = 0;
-var curDiff:Int = 0;
+var curDiff:Int = 0; 
 
 function create() {
 	if (FlxG.save.data.breakerOptions == null)
