@@ -19,7 +19,8 @@ var bg;
 var songText;
 var diffText;
 var selectedSong = 0;
-var curDiff:Int = 0; 
+var curDiff:Int = 0;
+var debugMode = true;
 
 function create() {
 	if (FlxG.save.data.breakerOptions == null)
@@ -29,6 +30,9 @@ function create() {
 		for (song in 0...songs.length)
 			songs[song][1].push("gay");
 	}
+
+	if (debugMode)
+		songs[0][1].push("V2old");
 
 	FlxG.resizeWindow(1280, 720);
 	FlxG.scaleMode.width = 1280;
@@ -82,7 +86,9 @@ function update(elapsed) {
 
 	if (controls.ACCEPT) {
 		if (songs[selectedSong][0] == "milk") {
-			var videoSprite:FlxSprite = MP4Video.playMP4(Assets.getPath(Paths.video('fridge')), function() {FlxG.switchState(new ModState("SunkiFridge", mod));}, false, FlxG.width, FlxG.height);
+			var videoSprite:FlxSprite = MP4Video.playMP4(Assets.getPath(Paths.video('fridge')), function() {
+				FlxG.switchState(new ModState("SunkiFridge", mod));
+			}, false, FlxG.width, FlxG.height);
 			videoSprite.scrollFactor.set();
 			add(videoSprite);
 		} else {
