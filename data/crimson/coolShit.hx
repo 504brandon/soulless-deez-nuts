@@ -1,3 +1,14 @@
+var boppidy = false;
+
+function beatHit() {
+    if (boppidy)
+        camHUD.zoom += 0.15;
+}
+
+function extraCamBop() {
+    boppidy = !boppidy;
+}
+
 function setCamZoom(amt:Float) {
     defaultCamZoom = amt;
 }
@@ -26,6 +37,6 @@ function faggot() {
 	faggot.alignment = "center";
 	faggot.cameras = [camHUD];
     FlxTween.tween(faggot, {y: 0, size: 235}, 0.15, {ease: FlxEase.elasticInOut});
-    FlxTween.tween(faggot, {y: -500, size: 25}, 0.3, {ease: FlxEase.elasticInOut, startDelay: 0.25});
+    FlxTween.tween(faggot, {y: -500, size: 25}, 0.3, {ease: FlxEase.elasticInOut, startDelay: 0.45, onComplete: function() {faggot.destroy();}});
 	add(faggot);
 }
