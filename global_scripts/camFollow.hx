@@ -5,7 +5,7 @@ function update(elapsed) {
     var ofs2:Int = 30;
 
     if (PlayState.section != null && PlayState.section.mustHitSection) {
-        switch(PlayState.boyfriend.animation.curAnim.name) {
+        switch(boyfriend.animation.curAnim.name) {
             case "singLEFT":
                 PlayState.camFollow.x = PlayState.camFollow.x - ofs;
             case "singRIGHT":
@@ -16,7 +16,7 @@ function update(elapsed) {
                 PlayState.camFollow.y = PlayState.camFollow.y + ofs;
         }
     } else {
-        switch(PlayState.dad.animation.curAnim.name) {
+        switch(dad.animation.curAnim.name) {
             case "singLEFT" :
                 PlayState.camFollow.x = PlayState.camFollow.x - ofs2;
             case "singRIGHT":

@@ -41,6 +41,13 @@
 			"end_cutscene": null,
 			"cutscene": null,
 			"name": "crimson"
+		},
+		{
+			"end_cutscene": null,
+			"cutscene": null,
+			"difficulties": [],
+			"scripts": [],
+			"name": "malediction"
 		}
 	]
 }

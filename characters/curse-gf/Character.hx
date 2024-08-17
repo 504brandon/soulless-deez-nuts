@@ -1,5 +1,5 @@
 function create() {
-    var tex = Paths.getCharacter("Soulles DX:curse-gf");
+    var tex = Paths.getCharacter(mod + ":curse-gf");
     character.frames = tex;
     character.animation.addByIndices('danceLeft', 'danceLeft', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "", 24, false);
     character.animation.addByIndices('danceRight', 'danceRight', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "", 24, false);

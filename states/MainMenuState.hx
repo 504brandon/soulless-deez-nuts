@@ -12,7 +12,7 @@ var songs = [
 	["milk", ["hard"], false],
 	["icecube", ["hard"], false],
 	["crimson", ["hard"], false],
-	["malediction", ["hard"], false]
+	["maleaddiction", ["hard"], false]
 ];
 
 var bg;
