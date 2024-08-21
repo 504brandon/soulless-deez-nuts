@@ -43,11 +43,11 @@
 			"name": "crimson"
 		},
 		{
+			"scripts": [],
+			"difficulties": [],
 			"end_cutscene": null,
 			"cutscene": null,
-			"difficulties": [],
-			"scripts": [],
-			"name": "malediction"
+			"name": "maleaddiction"
 		}
 	]
 }

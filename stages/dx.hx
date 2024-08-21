@@ -16,14 +16,10 @@ var camChars:FlxCamera;
 var dx:Character = null;
 
 function create() {
-	camDXNotes = new FlxCamera(0, -30, 2000, 960, 1);
+    camDXNotes = new FlxCamera(0, 0, 1280, 960, 1);
 	camDXNotes.bgColor = new FlxColor(0x00000000);
 	FlxG.cameras.add(camDXNotes, false);
 	camDXNotes.height = 700;
-
-	camPicoNotes = new FlxCamera(0, 0, 1280, 960, 1);
-	camPicoNotes.bgColor = new FlxColor(0x00000000);
-	FlxG.cameras.add(camPicoNotes, false);
 
 	if (PlayState.get_difficulty() != "V1")
 		camDXNotes.addShader(shader3 = new CustomShader(Paths.shader("dx"))); // ty yoshi
@@ -44,50 +40,49 @@ function create() {
 	bg = new FlxSprite(-913, -500).loadGraphic(Paths.image('stages/dx/bg'));
 	bg.antialiasing = true;
 	bg.scrollFactor.set(0.3, 0.4);
-	PlayState.add(bg);
+	add(bg);
 
 	hill = new FlxSprite(-350, 1).loadGraphic(Paths.image('stages/dx/hills'));
 	hill.antialiasing = true;
 	hill.scale.set(0.6, 0.6);
 	hill.scrollFactor.set(0.3, 0.4);
-	PlayState.add(hill);
+	add(hill);
 
 	trees = new FlxSprite(-913, 134).loadGraphic(Paths.image('stages/dx/trees'));
 	trees.antialiasing = true;
 	trees.scale.set(0.7, 0.7);
 	trees.scrollFactor.set(0.6, 0.4);
-	PlayState.add(trees);
+	add(trees);
 
 	pillar2 = new FlxSprite(-498, -1116).loadGraphic(Paths.image('stages/dx/pillar2'));
 	pillar2.antialiasing = true;
 	pillar2.scrollFactor.set(0.85, 0.85);
 	pillar2.cameras = [camBG];
-	PlayState.add(pillar2);
+	add(pillar2);
 
 	pillar1 = new FlxSprite(700, -1257).loadGraphic(Paths.image('stages/dx/pillar1'));
 	pillar1.antialiasing = true;
 	pillar1.scrollFactor.set(0.9, 0.9);
 	pillar1.cameras = [camBG];
-	PlayState.add(pillar1);
+	add(pillar1);
 
 	green = new FlxSprite(200, -700).loadGraphic(Paths.image('stages/dx/top'));
 	green.antialiasing = true;
 	green.scale.set(3, 3);
 	green.cameras = [camBG];
-	PlayState.add(green);
+	add(green);
 
-	floor = new FlxSprite(-565, 275).loadGraphic(Paths.image('stages/dx/floor'));
+	floor = new FlxSprite(-570, 295).loadGraphic(Paths.image('stages/dx/floor'));
 	floor.antialiasing = true;
 	floor.scale.set(0.8, 0.8);
 	floor.cameras = [camBG];
-	PlayState.add(floor);
+	add(floor);
 
 	if (PlayState.get_difficulty() == "gay") {
 		camGame.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
 		camBG.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
 		camChars.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
 		camHUD.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
-		camPicoNotes.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
 		camDXNotes.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
 	}
 
@@ -95,7 +90,7 @@ function create() {
 		bushes.antialiasing = true;
 		bushes.scale.set(0.7, 0.7);
 		bushes.cameras = [camChars];
-		PlayState.add(bushes); */
+		add(bushes); */
 
 	dx = PlayState.dad;
 }
@@ -123,11 +118,6 @@ function createPost() {
 
 	FlxG.cameras.add(camHUD, false);
 
-	PlayState.healthBarBG.visible = false;
-	PlayState.healthBar.visible = false;
-	PlayState.iconP1.visible = false;
-	PlayState.iconP2.visible = false;
-	PlayState.scoreTxt.visible = false;
 	PlayState.dad.cameras = [camChars];
 	PlayState.boyfriend.cameras = [camChars];
 

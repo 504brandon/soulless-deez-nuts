@@ -1,12 +1,12 @@
 {
 	"arrowColors": null,
 	"camOffset": {
-		"x": -170,
-		"y": -390
+		"x": 40,
+		"y": 110
 	},
 	"globalOffset": {
-		"x": 260,
-		"y": 30
+		"x": -230,
+		"y": 70
 	},
 	"healthbarColor": "#31B0D1",
 	"flipX": true,
@@ -15,45 +15,45 @@
 			"indices": null,
 			"x": 0,
 			"y": 0,
-			"anim": "idle",
+			"anim": "ycre-bf idle",
 			"loop": false,
 			"name": "idle",
-			"framerate": 28
+			"framerate": 10
 		},
 		{
 			"indices": null,
-			"x": 138,
-			"y": -200,
-			"anim": "singDOWN",
+			"x": 0,
+			"y": -12,
+			"anim": "ycre-bf down",
 			"loop": false,
 			"name": "singDOWN",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 4,
-			"y": -16,
-			"anim": "singRIGHT",
+			"x": 0,
+			"y": -30,
+			"anim": "ycre-bf right",
 			"loop": false,
 			"name": "singRIGHT",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 92,
-			"y": -30,
-			"anim": "singLEFT",
+			"x": -2,
+			"y": -4,
+			"anim": "ycre-bf up",
 			"loop": false,
-			"name": "singLEFT",
+			"name": "singUP",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": -32,
-			"y": 132,
-			"anim": "singUP",
+			"x": 0,
+			"y": -30,
+			"anim": "ycre-bf left",
 			"loop": false,
-			"name": "singUP",
+			"name": "singLEFT",
 			"framerate": 24
 		}
 	],
@@ -71,5 +71,5 @@
 			1
 		]
 	],
-	"scale": 0.8
+	"scale": 1
 }

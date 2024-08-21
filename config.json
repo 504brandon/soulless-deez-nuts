@@ -1,6 +1,5 @@
 {
 	"skinnableGFs": [],
-	"discordRpc": null,
 	"BFskins": [],
 	"downloadLink": null,
 	"locked": false,
@@ -32,5 +31,6 @@
 	"description": "gay",
 	"titleBarName": "Friday Night Funkin' - Soulless Deez Nuts",
 	"GFskins": [],
+	"discordRpc": "1013810301491228743",
 	"downloadLinkAlt": null
 }
