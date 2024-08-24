@@ -16,18 +16,12 @@ var camChars:FlxCamera;
 var dx:Character = null;
 
 function create() {
-    camDXNotes = new FlxCamera(0, 0, 1280, 960, 1);
+    camDXNotes = new FlxCamera(0, 0, 1450, 700, 1);
 	camDXNotes.bgColor = new FlxColor(0x00000000);
 	FlxG.cameras.add(camDXNotes, false);
-	camDXNotes.height = 700;
 
 	if (PlayState.get_difficulty() != "V1")
 		camDXNotes.addShader(shader3 = new CustomShader(Paths.shader("dx"))); // ty yoshi
-
-	FlxG.scaleMode.width = 1280;
-    FlxG.scaleMode.height = 960;
-    FlxG.scaleMode.isWidescreen = false;
-	FlxG.resizeWindow(1024, 768);
 
 	camBG = new FlxCamera(0, 0, 1280, 960, 1);
 	camBG.bgColor = new FlxColor(0x00000000);
@@ -86,6 +80,11 @@ function create() {
 		camDXNotes.addShader(new CustomShader(Paths.shader("rainbow"))); // ty yoshi
 	}
 
+	FlxG.scaleMode.width = 1280;
+    FlxG.scaleMode.height = 960;
+    FlxG.scaleMode.isWidescreen = false;
+	FlxG.resizeWindow(1024, 768);
+
 	/*bushes = new FlxSprite(-1654, -58).loadGraphic(Paths.image('stages/dx/bushes'));
 		bushes.antialiasing = true;
 		bushes.scale.set(0.7, 0.7);
@@ -113,7 +112,7 @@ function createPost() {
 
 		strum.angle = 90;
 		strum.cameras = [camDXNotes];
-		strum.setPosition(1500, 95 + (145 * strumIndex));
+		strum.setPosition(1500, 75 + (145 * strumIndex));
 	}
 
 	FlxG.cameras.add(camHUD, false);
@@ -276,6 +275,8 @@ function stepHit(curStep:Int) {
 		bg.color = 0xFFFF3333;
 		hill.color = 0xFFFF3333;
 		trees.color = 0xFFFF3333;
+
+		boingySproingy = false;
 	}
 }
 

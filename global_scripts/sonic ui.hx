@@ -60,7 +60,7 @@ if (sonicUISongs.contains(PlayState.jsonSongName.toLowerCase())) {
 		MissTxtAltr.cameras = [sonicHUD];
 		add(MissTxtAltr);
 
-		ScoreTxtAlt = new FlxText(ScoreTxtAltr.x + 365, ScoreTxtAltr.y, FlxG.width, "0", 65);
+		ScoreTxtAlt = new FlxText(ScoreTxtAltr.x + 285, ScoreTxtAltr.y, FlxG.width, "0", 65);
 		ScoreTxtAlt.setFormat(Paths.font('HUD', 'tff'), 65, 0xFFf2f2f2, null, FlxTextBorderStyle.SHADOW, 0xFF0f0f0f);
 		ScoreTxtAlt.borderSize = 3;
 		ScoreTxtAlt.cameras = [sonicHUD];
