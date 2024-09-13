@@ -3,6 +3,7 @@ import flixel.util.FlxTimer;
 
 var coolText;
 var gayNum = 0;
+var goingIntoShit = false;
 
 function create() {
 	FlxG.sound.playMusic(Paths.music('sdxnew'));
@@ -42,34 +43,37 @@ function createPost() {
 }
 
 function update(elapsed:Float) {
-	var gayKeys = [FlxG.keys.justPressed.G, FlxG.keys.justPressed.A, FlxG.keys.justPressed.Y];
+	if (!goingIntoShit) {
+		var gayKeys = [FlxG.keys.justPressed.G, FlxG.keys.justPressed.A, FlxG.keys.justPressed.Y];
 
-	var gayIndex = -1;
+		var gayIndex = -1;
 
-	for (gaykey in gayKeys) {
-		gayIndex++;
+		for (gaykey in gayKeys) {
+			gayIndex++;
 
-		if (gaykey && gayIndex == gayNum) {
-			gayNum++;
-			trace(gayNum);
+			if (gaykey && gayIndex == gayNum) {
+				gayNum++;
+				trace(gayNum);
 
-			if (gayNum == 3) {
-				gayNum = 0;
-				FlxG.save.data.gayMode = !FlxG.save.data.gayMode;
-				gayify();
+				if (gayNum == 3) {
+					gayNum = 0;
+					FlxG.save.data.gayMode = !FlxG.save.data.gayMode;
+					gayify();
+				}
 			}
+		}
+
+		if (controls.ACCEPT) {
+			goingIntoShit = true;
+			FlxG.sound.play(Paths.sound("UwU"));
+			FlxG.camera.flash(0xff9f0000, 0.85);
+			new FlxTimer().start(1.3, function() {
+				FlxG.switchState(new MainMenuState());
+			});
 		}
 	}
 
-    if (controls.ACCEPT) {
-        FlxG.sound.play(Paths.sound("UwU"));
-        FlxG.camera.flash(0xff9f0000, 0.85);
-        new FlxTimer().start(1.3, function() {
-            FlxG.switchState(new MainMenuState());
-        });
-    }
-
-    Conductor.songPosition = FlxG.sound.music.time;
+	Conductor.songPosition = FlxG.sound.music.time;
 }
 
 function beatHit() {

@@ -55,6 +55,13 @@
 			"end_cutscene": null,
 			"cutscene": null,
 			"name": "you-cant-run-encore"
+		},
+		{
+			"end_cutscene": null,
+			"cutscene": null,
+			"difficulties": [],
+			"scripts": [],
+			"name": "subterfuge"
 		}
 	]
 }
