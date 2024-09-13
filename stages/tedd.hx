@@ -59,8 +59,8 @@ function updatePost(elapsed) {
 
 	timer.text = time;
 
-	timer.angle = FlxMath.lerp(timer.angle, 0, 0.03);
-	timer.scale.y = FlxMath.lerp(timer.scale.y, 1, 0.05);
+	timer.angle = FlxMath.lerp(timer.angle, 0, elapsed * 60 * 0.075);
+	timer.scale.y = FlxMath.lerp(timer.scale.y, 1, elapsed * 60 * 0.052);
 
     /*for (strum in playerStrums.members) {
 		strum.y = FlxMath.lerp(strum.y, strumLine.y, 0.025);

@@ -5,55 +5,55 @@
 		"y": 0
 	},
 	"globalOffset": {
-		"x": 100,
-		"y": 300
+		"x": 0,
+		"y": 0
 	},
-	"healthbarColor": "#FF7B00",
-	"flipX": false,
+	"healthbarColor": "#31B0D1",
+	"flipX": true,
 	"anims": [
 		{
 			"indices": null,
 			"x": 0,
 			"y": 0,
-			"anim": "idleB",
+			"anim": "idle",
 			"loop": false,
 			"name": "idle",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 0,
-			"y": -116,
-			"anim": "downB",
-			"loop": false,
-			"name": "singDOWN",
-			"framerate": 24
-		},
-		{
-			"indices": null,
-			"x": 446,
-			"y": 0,
-			"anim": "rightB",
+			"x": -26,
+			"y": -90,
+			"anim": "singRIGHT",
 			"loop": false,
 			"name": "singRIGHT",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 0,
-			"y": 60,
-			"anim": "upB",
+			"x": 10,
+			"y": -40,
+			"anim": "singDOWN",
 			"loop": false,
-			"name": "singUP",
+			"name": "singDOWN",
 			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": -112,
-			"y": 4,
-			"anim": "leftB",
+			"x": -88,
+			"y": -112,
+			"anim": "singLEFT",
 			"loop": false,
 			"name": "singLEFT",
+			"framerate": 24
+		},
+		{
+			"indices": null,
+			"x": -40,
+			"y": -72,
+			"anim": "singUP",
+			"loop": false,
+			"name": "singUP",
 			"framerate": 24
 		}
 	],
@@ -71,5 +71,5 @@
 			1
 		]
 	],
-	"scale": 2.1
+	"scale": 1
 }

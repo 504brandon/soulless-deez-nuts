@@ -79,10 +79,10 @@ function updatePost() {
 		FlxG.resetState();
 	}
 
-	if (PlayState.get_difficulty() == "gay") {
+	/*if (PlayState.get_difficulty() == "gay") {
 		FlxG.sound.music.pitch = FlxG.random.float(1, 1.5);
 		vocals.pitch = FlxG.sound.music.pitch;
-	}
+	}*/
 }
 
 function destroy() {

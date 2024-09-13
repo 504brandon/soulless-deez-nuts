@@ -101,9 +101,22 @@ var dadCamY:Float = 0;
 var shader:CustomShader = null;
 
 function createPost() {
-	for (note in unspawnNotes)
-		if (!note.mustPress)
+	for (note in unspawnNotes) {
+		if (!note.mustPress) {
+			if (note.isSustainNote)
+				note.visible = false;
+			
+			var fuckme = ["red", "blue", "green", "purple"];
+
+			note.frames = Paths.getSparrowAtlas("DXNOTESBREAK");
+			note.animation.addByPrefix("table", fuckme[note.noteData] + "0");
+			note.animation.play("table");
+
 			note.cameras = [camDXNotes];
+
+			note.shader = null;
+		}
+	}
 
 	var strumIndex = -1;
 
@@ -157,7 +170,7 @@ function update(elapsed:Float) {
 
 	if (PlayState.section != null && PlayState.section.mustHitSection) {
 		PlayState.camFollow.setPosition(530, 480);
-		if (PlayState.get_difficulty() == "V1")
+		if (boyfriend.curCharacter == mod + ":picodx-old")
 			PlayState.defaultCamZoom = 1.2;
 		else
 			PlayState.defaultCamZoom = 0.75;

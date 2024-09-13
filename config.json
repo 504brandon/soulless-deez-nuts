@@ -1,36 +1,36 @@
 {
+	"discordRpc": "1013810301491228743",
 	"skinnableGFs": [],
 	"BFskins": [],
 	"downloadLink": null,
 	"locked": false,
+	"name": "Soulless Deez Nuts",
 	"keyNumbers": [
 		4
 	],
-	"name": "Soulless Deez Nuts",
+	"description": "gay",
 	"skinnableBFs": [],
 	"intro": {
+		"newgrounds": "newgrounds",
 		"authors": [
 			"ninjamuffin99",
 			"phantomArcade",
 			"kawaisprite",
 			"evilsk8er"
 		],
-		"newgrounds": "newgrounds",
+		"assoc": [
+			"In association",
+			"with"
+		],
 		"gameName": [
 			"Friday Night Funkin'",
 			"YoshiCrafter",
 			"Engine"
 		],
-		"assoc": [
-			"In association",
-			"with"
-		],
-		"bpm": 102,
-		"present": "present"
+		"present": "present",
+		"bpm": 102
 	},
-	"description": "gay",
 	"titleBarName": "Friday Night Funkin' - Soulless Deez Nuts",
-	"GFskins": [],
-	"discordRpc": "1013810301491228743",
-	"downloadLinkAlt": null
+	"downloadLinkAlt": null,
+	"GFskins": []
 }

@@ -6,12 +6,13 @@ import flixel.math.FlxMath;
 var songIcons = [];
 
 var songs = [
-	["gamebreaker", ["V1", "V2", "silly"], true],
+	["gamebreaker", ["V1", "SENPAIMIX", "V2", "silly"], true],
 	["cuckshedder", ["V1", "V2"], true],
 	["robbery", ["hard"], false],
 	["milk", ["hard"], false],
 	["icecube", ["hard"], false],
 	["crimson", ["hard"], false],
+	["subterfuge", ["hard"], false],
 	["maleaddiction", ["hard"], false]
 ];
 

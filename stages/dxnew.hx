@@ -22,7 +22,7 @@ function create() {
     camMain.bgColor = 0x00ffffff;
     FlxG.cameras.add(camMain);
 	
-	for (obj in [stage.getSprite("frontbg"), dad, boyfriend])
+	for (obj in [stage.getSprite("frontbg"), stage.getSprite("lifebox"), dad, boyfriend])
 		obj.cameras = [camMain];
 
 	camDX.addShader(new CustomShader(Paths.shader("dx")));

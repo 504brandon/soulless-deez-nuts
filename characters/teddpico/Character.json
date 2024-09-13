@@ -5,8 +5,8 @@
 		"y": 0
 	},
 	"globalOffset": {
-		"x": 50,
-		"y": 235
+		"x": -80,
+		"y": 25
 	},
 	"healthbarColor": "#B7D855",
 	"flipX": true,
@@ -18,42 +18,42 @@
 			"anim": "idle",
 			"loop": false,
 			"name": "idle",
-			"framerate": 15
+			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 0,
-			"y": -108,
-			"anim": "singDOWN",
-			"loop": false,
-			"name": "singDOWN",
-			"framerate": 15
-		},
-		{
-			"indices": null,
-			"x": -14,
-			"y": -24,
+			"x": -24,
+			"y": -42,
 			"anim": "singRIGHT",
 			"loop": false,
 			"name": "singRIGHT",
-			"framerate": 15
+			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 18,
-			"y": 138,
-			"anim": "singUP",
+			"x": -10,
+			"y": -158,
+			"anim": "singDOWN",
 			"loop": false,
-			"name": "singUP",
-			"framerate": 15
+			"name": "singDOWN",
+			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 52,
-			"y": -36,
+			"x": 72,
+			"y": -26,
 			"anim": "singLEFT",
 			"loop": false,
 			"name": "singLEFT",
+			"framerate": 24
+		},
+		{
+			"indices": null,
+			"x": -2,
+			"y": 188,
+			"anim": "singUP",
+			"loop": false,
+			"name": "singUP",
 			"framerate": 24
 		}
 	],
@@ -71,5 +71,5 @@
 			1
 		]
 	],
-	"scale": 1.1
+	"scale": 1
 }

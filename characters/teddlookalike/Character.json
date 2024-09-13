@@ -1,12 +1,12 @@
 {
 	"arrowColors": null,
 	"camOffset": {
-		"x": 20,
-		"y": 110
+		"x": -30,
+		"y": 80
 	},
 	"globalOffset": {
-		"x": -410,
-		"y": -530
+		"x": -150,
+		"y": -480
 	},
 	"healthbarColor": "#31B0D1",
 	"flipX": false,
@@ -18,43 +18,43 @@
 			"anim": "idle",
 			"loop": true,
 			"name": "idle",
-			"framerate": 10
+			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 0,
-			"y": 0,
-			"anim": "down",
-			"loop": false,
-			"name": "singDOWN",
-			"framerate": 14
-		},
-		{
-			"indices": null,
-			"x": 0,
-			"y": 0,
-			"anim": "right",
+			"x": -50,
+			"y": -96,
+			"anim": "singRIGHT",
 			"loop": false,
 			"name": "singRIGHT",
-			"framerate": 14
+			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 0,
-			"y": 0,
-			"anim": "up",
+			"x": -24,
+			"y": -216,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "singDOWN",
+			"framerate": 24
+		},
+		{
+			"indices": null,
+			"x": 40,
+			"y": 30,
+			"anim": "singUP",
 			"loop": false,
 			"name": "singUP",
-			"framerate": 14
+			"framerate": 24
 		},
 		{
 			"indices": null,
-			"x": 0,
-			"y": 0,
-			"anim": "left",
+			"x": -12,
+			"y": -44,
+			"anim": "singLEFT",
 			"loop": false,
 			"name": "singLEFT",
-			"framerate": 14
+			"framerate": 24
 		}
 	],
 	"danceSteps": [
@@ -71,5 +71,5 @@
 			1
 		]
 	],
-	"scale": 0.85
+	"scale": 0.9
 }

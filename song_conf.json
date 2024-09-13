@@ -48,6 +48,13 @@
 			"end_cutscene": null,
 			"cutscene": null,
 			"name": "maleaddiction"
+		},
+		{
+			"scripts": [],
+			"difficulties": [],
+			"end_cutscene": null,
+			"cutscene": null,
+			"name": "you-cant-run-encore"
 		}
 	]
 }
